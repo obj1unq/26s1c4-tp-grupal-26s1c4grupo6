@@ -1,14 +1,13 @@
 import wollok.game.*
-
+import forest.*
 program PepitaGame {
 	game.title("Forest Run")
 	game.height(9)
 	game.width(16)
 	game.cellSize(50)
-
+	game.addVisual(forest)
+	forest.moverse()
 	// add assets in asset folder, for example, for the background
-  // game.boardGround("fondo2.jpg")
-
-
+    game.boardGround("fondo-gif.gif")
 	game.start()
 }
