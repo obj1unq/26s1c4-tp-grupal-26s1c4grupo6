@@ -6,20 +6,25 @@ class Comida{
     var property image 
 
     method choqueCon(personaje){
-        personaje.adquirirEnergiaDeComida(self)
+        personaje.comer(self)
         game.removeVisual(self)
     }
 
 }
 
-class Manzana inherits Comida{
-//method position
-    method energiaDeComida()=30
-    method image()="manzana.jpg"
+object manzana inherits Comida{
+    method initialize() {
+        position = game.at(0, 1)//falta desplazamiento
+        image = "manzana.png"
+        energiaDeComida = 30
+    }
 }
 
 class Banana inherits Comida{
-    //method position
-    method energiaDeComida()=40 
-    method image()="banana.jpg"
+    method initialize() {
+        position = game.at(0, 1) //falta desplazamiento
+        image = "banana.png"
+        energiaDeComida = 40
+    }
 }
+
