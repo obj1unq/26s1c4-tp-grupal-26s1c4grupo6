@@ -4,6 +4,7 @@ import comidas.*
 import colisiones.*
 import spawner.*
 
+/*
 program PepitaGame {
 	game.title("Forest Run")
 	game.height(9)
@@ -15,6 +16,12 @@ program PepitaGame {
 	forest.correr()
 	spawner.iniciar()
     game.boardGround("fondo-nivel-1.gif")
+	game.onCollideDo(forest, {objeto => objeto.choqueCon(forest)})
 	game.start()
 	game.onCollideDo(forest, {objeto => objeto.choqueCon(forest)})
+}
+*/
+
+program ForestRun{
+	forestRun.iniciar()
 }
