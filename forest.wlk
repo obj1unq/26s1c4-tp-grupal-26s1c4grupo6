@@ -12,8 +12,6 @@ object forest{
             image="forest-parado.png"
         }
     }
-
-
     method correr(){
         game.onTick(100, "movimientoDeForest" ,{self.forestCorriendo()})
     } 
@@ -22,7 +20,7 @@ object forest{
     }
 
     method saltar(){
-        position=self.position().up(1)
-        game.schedule(300, { position = self.position().down(1) })       
+        position=self.position().up(2)
+        game.schedule(300, { position = self.position().down(2) })       
     }
 }

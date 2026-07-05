@@ -2,6 +2,7 @@ import wollok.game.*
 import forest.*
 import comidas.*
 import colisiones.*
+import spawner.*
 
 program PepitaGame {
 	game.title("Forest Run")
@@ -9,11 +10,11 @@ program PepitaGame {
 	game.width(16)
 	game.cellSize(50)
 	game.addVisual(forest)
-
 	game.addVisual(manzana)
 	juego.movimientos()
 	forest.correr()
-	// add assets in asset folder, for example, for the background
+	spawner.iniciar()
     game.boardGround("fondo-nivel-1.gif")
 	game.start()
+	game.onCollideDo(forest, {objeto => objeto.choqueCon(forest)})
 }

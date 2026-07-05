@@ -9,7 +9,6 @@ class Comida{
         personaje.comer(self)
         game.removeVisual(self)
     }
-
 }
 
 object manzana inherits Comida{
