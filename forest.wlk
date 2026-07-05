@@ -3,11 +3,8 @@ import comidas.*
 object forest{
     var property image = "forest-parado.png"
     var property position = game.at(0,1)
-    var property energia
+    var property energia=100
 
-    method moverse(){
-        game.onTick(100, "movimientoDeForest" ,{self.forestCorriendo()})
-    } 
     method forestCorriendo(){
         if(self.image()=="forest-parado.png"){
             image="forest-corriendo.png"
@@ -16,12 +13,16 @@ object forest{
         }
     }
 
+
+    method correr(){
+        game.onTick(100, "movimientoDeForest" ,{self.forestCorriendo()})
+    } 
     method comer(comida){
-            game.onCollideDo(comida, {comida.choqueCon(self)})
+         energia= energia + comida.energiaDeComida()       
     }
 
-    method adquirirEnergiaDeComida(comida){
-        energia= energia + comida.energiaDeComida()
+    method saltar(){
+        position=self.position().up(1)
+        game.schedule(300, { position = self.position().down(1) })       
     }
 }
-
