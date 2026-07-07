@@ -1,3 +1,4 @@
+import colisiones.*
 import wollok.game.*
 import comidas.*
 object forest{
@@ -22,5 +23,12 @@ object forest{
     method saltar(){
         position=self.position().up(2)
         game.schedule(300, { position = self.position().down(2) })       
+    }
+    
+    method reiniciar(){
+        energia = 100
+    }
+    method perder() {
+        forestRun.terminar()
     }
 }
