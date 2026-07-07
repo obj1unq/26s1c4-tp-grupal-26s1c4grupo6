@@ -1,11 +1,50 @@
 import wollok.game.*
 import forest.*
-class Obstaculo{
+import spawner.*
+//class Obstaculo{
+//    var property position
+//    var estadoAnimacion
+//
+//    method moverse() {
+//        game.onTick(130, "Movimiento de obstaculo",{self.obstaculoMoviendose()})
+//    }
+//
+//    method obstaculoMoviendose(){    
+//        self.moverObstaculo()
+//        self.actualizarImagen()
+//    }
+//
+//    method moverObstaculo(){
+//        position = position.left(1)
+//        if (position.x() < -1){
+//            self.eliminar()
+//        }
+//    }
+//
+//    method image() = estadoAnimacion.image()
+//
+//    method actualizarImagen(){
+//        estadoAnimacion = estadoAnimacion.siguiente()
+//    }
+//     
+//    method eliminar(){
+//        game.removeVisual(self)
+//    }
+//
+//    method choqueCon(personaje){
+//        personaje.perder()
+//    }
+//}
+
+class Obstaculo {
     var property position
     var estadoAnimacion
+    var property id
+
+    method nombreTick() = "Movimiento de obstaculo " + id.toString()
 
     method moverse() {
-        game.onTick(130, "Movimiento de obstaculo",{self.obstaculoMoviendose()})
+        game.onTick(130, self.nombreTick(), {self.obstaculoMoviendose()})
     }
 
     method obstaculoMoviendose(){    
@@ -27,10 +66,13 @@ class Obstaculo{
     }
      
     method eliminar(){
+        game.removeTickEvent(self.nombreTick())
         game.removeVisual(self)
+        spawner.quitar(self)
     }
 
     method choqueCon(personaje){
+        game.removeTickEvent(self.nombreTick())
         personaje.perder()
     }
 }
