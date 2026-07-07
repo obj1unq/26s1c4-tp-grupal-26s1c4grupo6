@@ -17,6 +17,6 @@ _(Git Grupal: https://docs.google.com/presentation/d/1-o5zEUfuUT72ea8q2rk8mwHSqM
 
 ## Otros
 
-- Objetos 1, Comisión 4
+- Programación Orientada a Objetos 1, Comisión 4
 - Versión de Wollok: 4.2.3
 - Una vez terminado, no tenemos problemas en que el repositorio sea público
