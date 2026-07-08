@@ -5,6 +5,7 @@ class Comida inherits Obstaculo{
     var property energiaDeComida
     var property image 
 
+<<<<<<< HEAD
     override method choqueCon(personaje){
         personaje.comer(self)
         self.eliminar()
@@ -13,10 +14,15 @@ class Comida inherits Obstaculo{
 
     method initialize() {
             estadoAnimacion = null
+=======
+    method choqueCon(personaje){
+        personaje.comer(self)
+        game.removeVisual(self)
+>>>>>>> upstream/master
     }
-
 }
 
+<<<<<<< HEAD
 
 
 class Manzana inherits Comida
@@ -91,3 +97,21 @@ object alasArriba {
 }*/
 
 
+=======
+object manzana inherits Comida{
+    method initialize() {
+        position = game.at(0, 1)//falta desplazamiento
+        image = "manzana.png"
+        energiaDeComida = 30
+    }
+}
+
+class Banana inherits Comida{
+    method initialize() {
+        position = game.at(0, 1) //falta desplazamiento
+        image = "banana.png"
+        energiaDeComida = 40
+    }
+}
+
+>>>>>>> upstream/master
