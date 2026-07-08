@@ -1,6 +1,6 @@
 import wollok.game.*
 
-class Obstaculo{
+/*class Obstaculo{
     var property position
 
     method collision(personaje) {
@@ -34,5 +34,4 @@ class Corredor inherits Obstaculo{
 
 class Ave inherits Obstaculo{
     method image() =
-}
-
+}*/

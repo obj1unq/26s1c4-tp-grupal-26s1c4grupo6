@@ -6,6 +6,7 @@ object juego{
 	method movimientos(){
         keyboard.up().onPressDo({forest.saltar()})
         keyboard.c().onPressDo({self.comerSiHayComida()})
+        keyboard.down().onPressDo({ forest.agacharse() })
     }
 
     method comerSiHayComida(){
@@ -18,3 +19,5 @@ object juego{
         return not game.colliders(forest).isEmpty()
     }
 }
+
+

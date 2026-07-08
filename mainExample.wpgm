@@ -9,11 +9,12 @@ program PepitaGame {
 	game.width(16)
 	game.cellSize(50)
 	game.addVisual(forest)
-
-	game.addVisual(manzana)
+	game.addVisual(energiaForest)
 	juego.movimientos()
 	forest.correr()
 	// add assets in asset folder, for example, for the background
     game.boardGround("fondo-nivel-1.gif")
 	game.start()
 }
+
+
