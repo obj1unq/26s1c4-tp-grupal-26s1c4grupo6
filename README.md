@@ -12,7 +12,8 @@ _(Git Grupal: https://docs.google.com/presentation/d/1-o5zEUfuUT72ea8q2rk8mwHSqM
 - ForestRun! es un runner en el que deberás esquivar obstáculos para aumentar tu puntuación!
 - Con la flecha hacia arriba, el personaje saltará
 - Con la flecha hacia abajo, el personaje se agachará
-- Si en algún momento llegás a perder, podés presionar R para reiniciar 
+- Si en algún momento llegás a perder, podés presionar R para reiniciar
+- Tené cuidado con la energia, saltar y agacharse la consumirán, la comida restaurará parte de ella
 
 
 ## Otros
