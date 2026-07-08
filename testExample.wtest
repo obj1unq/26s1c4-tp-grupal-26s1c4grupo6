@@ -1,9 +1,54 @@
-import example.pepita
+import comidas.*
+import forest.*
+import juego.*
+import wollok.game.*
+import obstaculos.*
+import spawner.*
 
-describe "group of tests for pepita" {
+const banana = new Banana(id="banana")
+test "Forest energia" {
+  assert.equals(10, forest.energia())
+  forest.saltar()
+  assert.equals(8, forest.energia())
+}
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
-  }
+test "Forest comer"{
+  assert.equals(10, forest.energia())
+  forest.comer(banana)
+  assert.equals(10, forest.energia())
+  forest.saltar()
+  assert.equals(8, forest.energia())
+  forest.comer(banana)
+  assert.equals(10, forest.energia())
+}
 
+test "Forest está cansado"{
+  assert.notThat(forest.estaCansado())
+  forest.saltar()
+  forest.saltar()
+  forest.saltar()
+  forest.saltar()
+  forest.saltar()
+  assert.that(forest.estaCansado())
+}
+
+test "Forest se reinicia"{
+  assert.notThat(forest.estaCansado())
+  forest.saltar()
+  forest.saltar()
+  forest.saltar()
+  forest.saltar()
+  forest.saltar()
+  assert.that(forest.estaCansado())
+  forest.reiniciar()
+  assert.equals(10, forest.energia())
+}
+
+test "Forest restar energia"{
+  assert.equals(10, forest.energia())
+  forest.bajarEnergia(3)
+  assert.equals(7, forest.energia())
+  forest.comer(banana)
+  forest.bajarEnergia(2)
+  assert.equals(7, forest.energia())
 }

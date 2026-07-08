@@ -35,7 +35,7 @@ object forest{
     method comer(comida){
          energia= (energia + comida.energiaDeComida()).min(10)   
     }
-
+    
     method saltar(){
         position=self.position().up(1)
         game.schedule(400, { position = self.position().down(1) })  
