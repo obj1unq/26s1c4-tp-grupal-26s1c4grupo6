@@ -1,24 +1,5 @@
 import wollok.game.*
 
-//object score {
-//    var puntos = 0
-//    const property position = game.at(1, 8)
-//
-//    method puntos() = puntos
-//
-//    method sumarPunto() {
-//        puntos += 1
-//    }
-//
-//    method reiniciar() {
-//        puntos = 0
-//    }
-//
-//    method text() = "Marcador: " + puntos.toString()
-//
-//    method textColor() = "654321"
-//}
-
 object score {
     var puntos = 0
     const cantidadDigitos = 5

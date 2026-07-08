@@ -1,0 +1,9 @@
+import wollok.game.*
+import forest.*
+import comidas.*
+import juego.*
+import spawner.*
+
+program ForestRun{
+	forestRun.iniciar()
+}

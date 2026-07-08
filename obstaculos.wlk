@@ -1,41 +1,6 @@
 import wollok.game.*
 import forest.*
 import spawner.*
-//class Obstaculo{
-//    var property position
-//    var estadoAnimacion
-//
-//    method moverse() {
-//        game.onTick(130, "Movimiento de obstaculo",{self.obstaculoMoviendose()})
-//    }
-//
-//    method obstaculoMoviendose(){    
-//        self.moverObstaculo()
-//        self.actualizarImagen()
-//    }
-//
-//    method moverObstaculo(){
-//        position = position.left(1)
-//        if (position.x() < -1){
-//            self.eliminar()
-//        }
-//    }
-//
-//    method image() = estadoAnimacion.image()
-//
-//    method actualizarImagen(){
-//        estadoAnimacion = estadoAnimacion.siguiente()
-//    }
-//     
-//    method eliminar(){
-//        game.removeVisual(self)
-//    }
-//
-//    method choqueCon(personaje){
-//        personaje.perder()
-//    }
-//}
-
 class Obstaculo {
     var property position
     var estadoAnimacion

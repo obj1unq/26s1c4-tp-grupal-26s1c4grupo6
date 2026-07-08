@@ -1,10 +1,10 @@
-import colisiones.*
+import juego.*
 import wollok.game.*
 import comidas.*
 object forest{
     var property image = "forest-parado.png"
     var property position = game.at(0,1)
-    var property energia=8
+    var property energia= 10
 
     method forestCorriendo(){
         if(self.image()=="forest-parado.png"){

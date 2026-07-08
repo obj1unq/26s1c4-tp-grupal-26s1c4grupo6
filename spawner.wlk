@@ -1,24 +1,6 @@
 import obstaculos.*
 import wollok.game.*
 import comidas.*
-//object spawner {
-//    const ave = {new Ave(estadoAnimacion = alasArriba, position = game.at(25, 1))}
-//    const corredor = {new Corredor(estadoAnimacion = corredorUno, position = game.at(25, 1))}
-//    const auto = {new Auto(estadoAnimacion = autoHumo, position = game.at(25,1))}
-//    const obstaculos = [ave, corredor, auto]
-//    
-//    method iniciar() {
-//        game.onTick(1500, "Spawn de obstaculos", { self.crearObstaculoRandom() })
-//    }
-//
-//    method crearObstaculoRandom() {
-//        const obstaculoElegido = obstaculos.anyOne()
-//        const obstaculoNuevo = obstaculoElegido.apply()
-//
-//        game.addVisual(obstaculoNuevo)
-//        obstaculoNuevo.moverse()
-//    }
-//}
 object spawner {
     var contador = 0
     var obstaculosActivos = []
@@ -28,7 +10,7 @@ object spawner {
     const ave = {new Ave(id = "ave", estadoAnimacion = alasArriba, position = game.at(25, 1))}
     const corredor = {new Corredor(id = "corredor", estadoAnimacion = corredorUno, position = game.at(25, 1))}
     const auto = {new Auto(id = "auto",estadoAnimacion = autoHumo, position = game.at(25,1))}
-    const obstaculos = [ave, corredor, auto, manzana,banana]
+    const obstaculos = [ave, corredor, auto,banana, banana, manzana]
     
 
     method iniciar() {
