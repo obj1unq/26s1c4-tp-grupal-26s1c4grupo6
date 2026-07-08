@@ -73,7 +73,7 @@ class Obstaculo {
 
     method choqueCon(personaje){
         game.removeTickEvent(self.nombreTick())
-        personaje.perder()
+        personaje.perder("Chocaste!")
     }
 }
 
