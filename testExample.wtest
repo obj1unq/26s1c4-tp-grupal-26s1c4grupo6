@@ -6,6 +6,8 @@ import obstaculos.*
 import spawner.*
 
 const banana = new Banana(id="banana")
+const manzana = new Manzana(id="manzana")
+
 test "Forest energia" {
   assert.equals(10, forest.energia())
   forest.saltar()
