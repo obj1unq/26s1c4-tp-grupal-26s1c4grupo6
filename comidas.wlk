@@ -1,29 +1,32 @@
+import obstaculos.*
 import wollok.game.*
 
-class Comida{ 
-    var property position
+class Comida inherits Obstaculo{ 
     var property energiaDeComida
-    var property image 
-
-    method choqueCon(personaje){
+ 
+    override method choqueCon(personaje){
         personaje.comer(self)
-        game.removeVisual(self)
+        self.eliminar()
     }
+    override method actualizarImagen() {}
+
+    method initialize() {
+            estadoAnimacion = null
+    }
+
 }
 
-object manzana inherits Comida{
-    method initialize() {
-        position = game.at(0, 1)//falta desplazamiento
-        image = "manzana.png"
-        energiaDeComida = 30
-    }
+class Manzana inherits Comida
+ (position = game.at(game.width(), 1), energiaDeComida = 1){
+  override method image() = "manzana.png"
 }
 
-class Banana inherits Comida{
-    method initialize() {
-        position = game.at(0, 1) //falta desplazamiento
-        image = "banana.png"
-        energiaDeComida = 40
-    }
+
+class Banana inherits Comida
+(position = game.at(game.width(), 1), energiaDeComida = 2){
+      override method image() = "banana.png"
+
 }
+
+
 

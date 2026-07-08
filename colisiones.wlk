@@ -91,7 +91,7 @@ object forestRun {
         score.reiniciar()
 
         game.addVisual(forest)
-        game.addVisual(manzana)
+        game.addVisual(energiaForest)
         game.addVisual(score)
 
         forest.correr()
@@ -107,22 +107,16 @@ object forestRun {
 
     method movimientos() {
         keyboard.up().onPressDo({ if (estaJugando) forest.saltar() })
-        keyboard.c().onPressDo({ if (estaJugando) self.comerSiHayComida() })
+        keyboard.down().onPressDo({ if (estaJugando) forest.agacharse() })
     }
 
-    method terminar() {
+    method terminar(motivo) {
         estaJugando = false
         spawner.detener()
         game.removeTickEvent("movimientoDeForest")
         game.removeTickEvent("sumarScore")
-        game.say(forest, "¡Perdiste! Marcador: " + score.puntos().toString() + ". Presioná R para reiniciar.")
+        game.say(forest, "¡Perdiste! " + motivo + " Marcador: " + score.puntos().toString() + ". Presioná R para reiniciar.")
     }
 
-    method comerSiHayComida() {
-        if (self.hayObjetosDondeForest()) {
-            game.uniqueCollider(forest).choqueCon(forest)
-        }
-    }
-
-    method hayObjetosDondeForest() = not game.colliders(forest).isEmpty()
+   
 }
