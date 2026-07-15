@@ -6,11 +6,13 @@ object spawner {
     var obstaculosActivos = []
     const manzana = { new Manzana(id="manzana") }
     const banana = { new Banana(id="banana") }
+    const manzanaPodrida = { new ManzanaPodrida(id="manzanaPodrida") }
+    const manzanaDorada = { new ManzanaDorada(id="manzanaDorada") }
 
     const ave = {new Ave(id = "ave", estadoAnimacion = alasArriba, position = game.at(25, 1))}
     const corredor = {new Corredor(id = "corredor", estadoAnimacion = corredorUno, position = game.at(25, 1))}
     const auto = {new Auto(id = "auto",estadoAnimacion = autoHumo, position = game.at(25,1))}
-    const obstaculos = [ave, corredor, auto,banana, banana, manzana]
+    const obstaculos = [ave, corredor, auto,banana, banana, manzana, manzanaPodrida, manzanaDorada]
     
 
     method iniciar() {

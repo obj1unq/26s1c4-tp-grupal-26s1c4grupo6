@@ -5,12 +5,13 @@ object forest{
     var property image = "forest-parado.png"
     var property position = game.at(0,1)
     var property energia= 10
+    var property estaInmune=false
 
     method forestCorriendo(){
-        if(self.image()=="forest-parado.png"){
-            image="forest-corriendo.png"
-        }else{
+        if(self.image()=="forest-corriendo.png"){
             image="forest-parado.png"
+        }else{
+            image="forest-corriendo.png"
         }
     }
 
@@ -57,9 +58,27 @@ object forest{
     method perder(motivo) {
         forestRun.terminar(motivo)
     }    
+    method activarInmunidad(){
+        if(not self.estaInmune()){
+            estaInmune=true
+            game.addVisual(aura)
+            game.schedule(5000,{self.sacarInmunidad()})
+        }
+    }
+    method sacarInmunidad(){
+       estaInmune=false
+       game.removeVisual(aura)
+    }
 }
 
 object energiaForest{
     method image()=forest.energia().toString() + ".png"
     method position() = game.at(1,forest.position().y()+3)
+}
+
+object aura{
+    method choqueCon(personaje){
+    }
+    method image()="aura5.png"
+    method position() = forest.position()
 }

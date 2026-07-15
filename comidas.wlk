@@ -6,7 +6,7 @@ class Comida inherits Obstaculo{
  
     override method choqueCon(personaje){
         personaje.comer(self)
-        self.eliminar()
+        self.eliminar() 
     }
     override method actualizarImagen() {}
 
@@ -19,6 +19,19 @@ class Comida inherits Obstaculo{
 class Manzana inherits Comida
  (position = game.at(game.width(), 1), energiaDeComida = 1){
   override method image() = "manzana.png"
+}
+
+class ManzanaDorada inherits Comida
+ (position = game.at(game.width(), 1), energiaDeComida = 3){
+  override method image() = "manzana-dorada.png"
+  override method choqueCon(personaje){
+    personaje.activarInmunidad()
+    super(personaje)
+  }
+}
+class ManzanaPodrida inherits Comida
+ (position = game.at(game.width(), 1), energiaDeComida = -3){
+  override method image() = "manzana-podrida.png"
 }
 
 
