@@ -7,10 +7,10 @@ object forest{
     var property energia= 10
 
     method forestCorriendo(){
-        if(self.image()=="forest-parado.png"){
-            image="forest-corriendo.png"
-        }else{
+        if(self.image()=="forest-corriendo.png"){
             image="forest-parado.png"
+        }else{
+            image="forest-corriendo.png"
         }
     }
 

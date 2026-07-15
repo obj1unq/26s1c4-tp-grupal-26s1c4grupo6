@@ -21,6 +21,16 @@ class Manzana inherits Comida
   override method image() = "manzana.png"
 }
 
+en comidas
+class ManzanaDorada inherits Comida
+ (position = game.at(game.width(), 1), energiaDeComida = 3){
+  override method image() = "manzana-dorada.png"
+}
+class ManzanaPodrida inherits Comida
+ (position = game.at(game.width(), 1), energiaDeComida = -2){
+  override method image() = "manzana-podrida.png"
+}
+
 
 class Banana inherits Comida
 (position = game.at(game.width(), 1), energiaDeComida = 2){
