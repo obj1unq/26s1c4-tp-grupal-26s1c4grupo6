@@ -37,8 +37,10 @@ class Obstaculo {
     }
 
     method choqueCon(personaje){
+        if(not personaje.estaInmune()){
         game.removeTickEvent(self.nombreTick())
         personaje.perder("Chocaste!")
+     }
     }
 }
 
